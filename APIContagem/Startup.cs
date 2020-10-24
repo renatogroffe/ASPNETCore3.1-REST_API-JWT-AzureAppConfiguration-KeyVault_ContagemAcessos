@@ -66,6 +66,10 @@ namespace APIContagem
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder => builder.AllowAnyMethod()
+                                          .AllowAnyOrigin()
+                                          .AllowAnyHeader());
+
             app.UseAzureAppConfiguration();
 
             app.UseHttpsRedirection();
